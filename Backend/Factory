@@ -1,1 +1,11 @@
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
 
+public class Factory
+{
+    public Tile[][] Factories;
+    public ArrayList<Tile> center;
+    public boolean isFirst;
+}
