@@ -8,4 +8,24 @@ public class Factory
     public Tile[][] Factories;
     public ArrayList<Tile> center;
     public boolean isFirst;
+
+    public void factorySelected()
+    {
+
+    }
+
+    public Tile addTile()
+    {
+
+    }
+
+    public Tile removeTile()
+    {
+
+    }
+
+    public void emptyFactory()
+    {
+        
+    }
 }
