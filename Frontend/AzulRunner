@@ -1,0 +1,4 @@
+public class AzulRunner 
+{
+	Frame run = new Frame("i am dying");
+}
