@@ -28,7 +28,7 @@ public class TilePanel extends JPanel
         tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Number_1_Tile.png")));
         tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Red_Tile.png")));
         tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Yellow_Tile.png")));
-        mainAzulBoard = ImageIO.read(JPanel.class.getResource("/images/Azul Board.jpg"))
+        mainAzulBoard = ImageIO.read(JPanel.class.getResource("/images/Azul Board.jpg"));
     }
 
 
