@@ -1,0 +1,22 @@
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+import javax.swing.SpringLayout;
+
+public class TilePanel extends JPanel
+{
+	private ArrayList<BufferedImage> tilesImages;
+	private BufferedImage boards;
+	
+	tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Black_Tile.png")));
+	
+}
