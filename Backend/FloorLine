@@ -13,8 +13,11 @@ public class Floorline {
 	public void addTile(Tile tile) {
 		FloorLines.add(tile);
 	}
-
-	public void reset() {}
+	
+	//removes all tiles in the FloorLines array
+	public void reset() {
+		FloorLines.removeAll();
+	}
 
 	//goes through the FloorLines arraylist and determines how many points get deducted based on the position on the floorline
 	public void getScore() {
