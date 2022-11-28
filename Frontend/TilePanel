@@ -2,6 +2,8 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.sql.Array;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -14,9 +16,20 @@ import javax.swing.SpringLayout;
 
 public class TilePanel extends JPanel
 {
-	private ArrayList<BufferedImage> tilesImages;
-	private BufferedImage boards;
-	
-	tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Black_Tile.png")));
-	
+    private ArrayList<BufferedImage> tilesImages;
+    private BufferedImage mainAzulBoard;
+
+    public TilePanel() throws IOException
+    {
+        tilesImages = new ArrayList<>();
+        tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Black_Tile.png")));
+        tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Blue_Tile.png")));
+        tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Light_Blue_Tile.png")));
+        tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Number_1_Tile.png")));
+        tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Red_Tile.png")));
+        tilesImages.add(ImageIO.read(JPanel.class.getResource("/images/Yellow_Tile.png")));
+        mainAzulBoard = ImageIO.read(JPanel.class.getResource("/images/Azul Board.jpg"))
+    }
+
+
 }
