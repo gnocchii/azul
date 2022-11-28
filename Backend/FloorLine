@@ -1,1 +1,41 @@
+import java.util.*;
+import java.util.ArrayList;
+public class Floorline {
+	private ArrayList < Tile > [] FloorLines = new ArrayList < Tile > ();
+	private Boolean firstTile;
+	int pointDeduction;
 
+	public Floorline() {
+		pointDeduction = 0;
+	}
+
+	//takes in a tile and adds it to FloorLines array
+	public void addTile(Tile tile) {
+		FloorLines.add(tile);
+	}
+
+	public void reset() {}
+
+	//goes through the FloorLines arraylist and determines how many points get deducted based on the position on the floorline
+	public void getScore() {
+		if (firstTile) {
+			for (int i = 1; i < 8; i++) {
+				int index = i;
+				if (FloorLines.get(i).contains(Tile)) {
+					if (index == 1 || index == 2) {
+						pointDeduction += -1;
+					}
+					if (index == 3 || index == 4 || index == 5) {
+						pointDeduction += -2;
+					}
+				}
+				if (index == 6 || index == 7) {
+					pointDeduction += -3;
+				}
+			}
+		}
+	}
+
+	public void setFirstTile() {}
+
+}
