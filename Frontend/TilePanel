@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.awt.*;
 import java.io.IOException;
 import java.sql.Array;
 import java.util.ArrayList;
@@ -42,7 +43,10 @@ public class TilePanel extends JPanel
 	
 	public void paint (Graphics g) 
 	{
-		g.drawRect(100, 100, 700, 700);
-		g.drawImage(mainAzulBoard,100, 100, 700, 700, null);
+		Font currentFont = g.getFont();
+		Font font = currentFont.deriveFont(currentFont.getSize() * 5.4F);
+		g.setFont(font);
+		g.drawImage(mainAzulBoard,60, 275, 550, 550, null);
+		g.drawString("PLAYER " /*player thats currently playing*/, 150 , 900);
 	}
 }
