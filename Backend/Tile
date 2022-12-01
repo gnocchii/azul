@@ -1,52 +1,46 @@
-public class Tile
-{
+import java.awt.image.BufferedImage;
+import java.util.*;
+import java.awt.*;
+public class Tile {
     public String color;
     public BufferedImage img;
     public Point pos;
-    
-    public Tile()
-    {
-    img = "n/a";
-    color = "blank";
-    pos = new Point(0, 0);
+
+    public Tile() {
+        img = new BufferedImage(0, 0, 0);
+        color = "blank";
+        pos = new Point(0, 0);
     }
-    
-    public Tile(BufferedImage img) 
-    {
+
+    public Tile(BufferedImage img) {
         this.img = img;
         color = "blank";
         pos = new Point(0, 0);
     }
-    
-    public Tile(BufferedImage img, String color, Point pos) 
-    {
+
+    public Tile(BufferedImage img, String color, Point pos) {
         this.img = img;
         this.color = color;
         this.pos = pos;
     }
-    
-    public String getColor()
-    {
+
+    public String getColor() {
         return color;
     }
-    
-    public void setColor(String c)
-    {
+
+    public void setColor(String c) {
         color = c;
     }
 
-    public int getX()
-    {
-        return pos.getX();
+    public int getX() {
+        return (int) pos.getX();
     }
 
-    public int getY()
-    {
-        return pos.getY();
+    public int getY() {
+        return (int)pos.getY();
     }
-    
-    public movePos(int x2, int y2)
-    {
+
+    public void movePos(int x2, int y2) {
         pos.setLocation(x2, y2);
     }
 }
