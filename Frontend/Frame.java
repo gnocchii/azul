@@ -1,6 +1,9 @@
 import java.awt.*;
 import javax.swing.*;
 
+//helloooooo
+
+
 public class Frame extends JFrame {
 	private static final int WIDTH = 1800;
 	private static final int HEIGHT = 1000;
