@@ -1,7 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
 
-//helloooooo
 
 
 public class Frame extends JFrame {
