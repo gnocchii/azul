@@ -20,21 +20,35 @@ import javax.swing.SpringLayout;
 public class MainMenu extends JPanel implements MouseListener
 {
 	private BufferedImage mainmenu, startbutton, title;
+	private static boolean ImageLoaded = false;
 	
 	public MainMenu()
-    {
-    	try
     	{
-    		mainmenu = ImageIO.read(MainMenu.class.getResource("/images/Main Page.jpg"));
-    		startbutton = ImageIO.read(MainMenu.class.getResource("/images/Start Button.png"));
-    		title = ImageIO.read(MainMenu.class.getResource("/images/Azul Title.png"));
-    	}
-    	catch(Exception E)
-    	{
-    		System.out.println("no");
-    		return;
-    	}
-    }
+    		try
+    		{
+			if (!ImageLoaded) 
+			{
+				System.out.println("loading images");
+
+				ClassLoader c1 = TilePanel.class.getClassLoader();
+
+				String currentPath = new java.io.File(".").getCanonicalPath();
+				System.out.println("Current dir:" + currentPath);
+				mainmenu = ImageIO.read(MainMenu.class.getResource("./images/Main Page.jpg"));
+    				startbutton = ImageIO.read(MainMenu.class.getResource("./images/Start Button.png"));
+    				title = ImageIO.read(MainMenu.class.getResource("./images/Azul Title.png"));
+				ImageLoaded = true;
+			}
+    		}	
+    		catch(Exception E)
+    		{
+    			System.out.println("no");
+			E.printStackTrace();
+    			return;
+    		}
+    		addMouseListener(this);
+    		repaint();
+	}
 	
 	public void paint(Graphics g)
 	{
@@ -47,10 +61,16 @@ public class MainMenu extends JPanel implements MouseListener
 	{
 		int x = e.getX();
 		int y = e.getY();
-		if(x >= 475 && x <= 1025 && y >= 600 && y <= 850)
+		if(x >= 0 && x <= getWidth() && y >= 0 && y <= getHeight())
 		{
-			add(new TilePanel());
-			setVisible(true);
+			try
+			{
+				Frame f = new Frame("GUYS WE'RE ACTUALLY FUCKED SJKFLA");
+			}
+			catch(IOException e1)
+			{
+				e1.printStackTrace();
+			}
 		}
 	}
 	
