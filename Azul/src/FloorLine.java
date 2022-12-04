@@ -5,8 +5,8 @@ public class FloorLine {
     private ArrayList<Tile> FloorLines;
     private Boolean firstTile;
 
+
     public FloorLine() {
-        pointDeduction = 0;
         FloorLines = new ArrayList<Tile>();
     }
 
