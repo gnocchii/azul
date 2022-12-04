@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Array;
 import java.util.ArrayList;
@@ -15,29 +16,56 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+import java.awt.AlphaComposite;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import javax.swing.border.Border;
 public class TilePanel extends JPanel
 {
     private ArrayList<BufferedImage> tilesImages;
-    private BufferedImage mainAzulBoard, factoryImage;
-
+	private static boolean ImageLoaded = false;
+	private BufferedImage mainAzulBoard, factoryImage;
     public TilePanel()
     {
-    	try
-    	{
-    		 tilesImages = new ArrayList<>();
-    	        tilesImages.add(ImageIO.read(TilePanel.class.getResource("/images/Black_Tile.png")));
-    	        tilesImages.add(ImageIO.read(TilePanel.class.getResource("/images/Blue_Tile.png")));
-    	        tilesImages.add(ImageIO.read(TilePanel.class.getResource("/images/Light_Blue_Tile.png")));
-    	        tilesImages.add(ImageIO.read(TilePanel.class.getResource("/images/Number_1_Tile.png")));
-    	        tilesImages.add(ImageIO.read(TilePanel.class.getResource("/images/Red_Tile.png")));
-    	        tilesImages.add(ImageIO.read(TilePanel.class.getResource("/images/Yellow_Tile.png")));
-    	     mainAzulBoard = ImageIO.read(TilePanel.class.getResource("/images/Azul Board.jpg"));
-    	     factoryImage = ImageIO.read(TilePanel.class.getResource("/images/Azul_Factory.png"));
-    	}
+    	try {
+			if (!ImageLoaded) {
+				System.out.println("loading images");
+
+				ClassLoader c1 = TilePanel.class.getClassLoader();
+
+				String currentPath = new java.io.File(".").getCanonicalPath();
+				System.out.println("Current dir:" + currentPath);
+
+
+				tilesImages = new ArrayList<>();
+				tilesImages.add(ImageIO.read(new File("./images/Black_Tile.png")));
+				tilesImages.add(ImageIO.read(new File("./images/Blue_Tile.png")));
+				tilesImages.add(ImageIO.read(new File("./images/Light_Blue_Tile.png")));
+				tilesImages.add(ImageIO.read(new File("./images/Number_1_Tile.png")));
+				tilesImages.add(ImageIO.read(new File("./images/Red_Tile.png")));
+				tilesImages.add(ImageIO.read(new File("./images/Yellow_Tile.png")));
+				mainAzulBoard = ImageIO.read(new File("./images/Azul Board.jpg"));
+				factoryImage = ImageIO.read(new File("./images/Azul_Factory.png"));
+				ImageLoaded = true;
+
+			}
+		}
     	catch(Exception E)
     	{
-    		System.out.println("no");
+			E.printStackTrace();
+
     		return;
     	}
     }
