@@ -1,8 +1,9 @@
+import java.io.IOException;
+
 public class AzulRunner 
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
-
-		Frame run = new Frame("i am dying");
+		StartFrame run = new StartFrame("guys we're fucked lmao");
 	}
 }
