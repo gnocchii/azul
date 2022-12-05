@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Array;
 import java.util.ArrayList;
@@ -34,9 +35,9 @@ public class MainMenu extends JPanel implements MouseListener
 
 				String currentPath = new java.io.File(".").getCanonicalPath();
 				System.out.println("Current dir:" + currentPath);
-				mainmenu = ImageIO.read(MainMenu.class.getResource("./images/Main Page.jpg"));
-    				startbutton = ImageIO.read(MainMenu.class.getResource("./images/Start Button.png"));
-    				title = ImageIO.read(MainMenu.class.getResource("./images/Azul Title.png"));
+				mainmenu = ImageIO.read(new File("./images/Main Page.jpg"));
+				startbutton = ImageIO.read(new File("./images/Start Button.png"));
+    			title = ImageIO.read(new File("./images/Azul Title.png"));
 				ImageLoaded = true;
 			}
     		}	

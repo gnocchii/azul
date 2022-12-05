@@ -3,10 +3,12 @@ import java.util.*;
 public class Factory
 {
     public static int FACTORY_SIZE = 4;
-    public ArrayList<Tile>[] Factories;
+    public static int NUM_FACTORIES = 8;
+    public static ArrayList<Tile>[] Factories;
     public boolean isFirst;
 
     public Factory(int numFactories) {
+
         Factories = new ArrayList[numFactories];
     }
 
@@ -33,10 +35,11 @@ public class Factory
     public ArrayList<Tile> removeTile(int factoryIndex, int tileIndex)
     {
         boolean isCenter = (factoryIndex == 0);
-        String color = Factories[factoryIndex].get(tileIndex).color;
+        Tile.Color color = Factories[factoryIndex].get(tileIndex).getColor();
         ArrayList<Tile> factory = Factories[factoryIndex];
-
         ArrayList<Tile> removed = new ArrayList<Tile>();
+
+
 
         // remove same color tiles from factory
         for(int i = 0; i < factory.size(); i++ ) { // TODO optimize?
