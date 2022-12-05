@@ -28,18 +28,19 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.util.Collections;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 public class TilePanel extends JPanel
 {
-    private ArrayList<BufferedImage> tilesImages;
+	private ArrayList<BufferedImage> tilesImages;
 	private static boolean ImageLoaded = false;
-	private BufferedImage mainAzulBoard, factoryImage;
-    public TilePanel()
-    {
-    	try {
+	private BufferedImage mainAzulBoard, factoryImage, numberOne;
+	public TilePanel()
+	{
+		try {
 			if (!ImageLoaded) {
 				System.out.println("loading images");
 
@@ -50,25 +51,31 @@ public class TilePanel extends JPanel
 
 
 				tilesImages = new ArrayList<>();
-				tilesImages.add(ImageIO.read(new File("./images/Black_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Blue_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Light_Blue_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Number_1_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Red_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Yellow_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Black_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Blue_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Light_Blue_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Red_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Yellow_Tile.png")));
 				mainAzulBoard = ImageIO.read(new File("./images/Azul Board.jpg"));
 				factoryImage = ImageIO.read(new File("./images/Azul_Factory.png"));
+				numberOne = ImageIO.read(new File("./images/Number_1_Tile.png"));
 				ImageLoaded = true;
+				Collections.shuffle(tilesImages);
 
 			}
 		}
-    	catch(Exception E)
-    	{
+		catch(Exception E)
+		{
 			E.printStackTrace();
 
-    		return;
-    	}
-    }
+			return;
+		}
+	}
 
 	public void paint (Graphics g)
 	{
