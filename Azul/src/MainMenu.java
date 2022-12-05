@@ -66,7 +66,7 @@ public class MainMenu extends JPanel implements MouseListener
 		{
 			try
 			{
-				Frame f = new Frame("GUYS WE'RE ACTUALLY FUCKED SJKFLA");
+				Frame f = new Frame("official azul project");
 			}
 			catch(IOException e1)
 			{
