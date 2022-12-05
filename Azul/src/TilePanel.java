@@ -36,7 +36,7 @@ public class TilePanel extends JPanel
 {
     private ArrayList<BufferedImage> tilesImages;
 	private static boolean ImageLoaded = false;
-	private BufferedImage mainAzulBoard, factoryImage;
+	private BufferedImage mainAzulBoard, factoryImage, numberOne;
     public TilePanel()
     {
     	try {
@@ -50,14 +50,19 @@ public class TilePanel extends JPanel
 
 
 				tilesImages = new ArrayList<>();
-				tilesImages.add(ImageIO.read(new File("./images/Black_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Blue_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Light_Blue_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Number_1_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Red_Tile.png")));
-				tilesImages.add(ImageIO.read(new File("./images/Yellow_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Black_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Blue_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Light_Blue_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Red_Tile.png")));
+				for(int i = 0; i < 20; i++)
+					tilesImages.add(ImageIO.read(new File("./images/Yellow_Tile.png")));
 				mainAzulBoard = ImageIO.read(new File("./images/Azul Board.jpg"));
 				factoryImage = ImageIO.read(new File("./images/Azul_Factory.png"));
+				numberOne = ImageIO.read(TilePanel.class.getResource("/images/Number_1_Tile.png"));
 				ImageLoaded = true;
 
 			}
