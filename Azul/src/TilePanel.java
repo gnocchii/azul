@@ -34,12 +34,12 @@ import javax.swing.*;
 import javax.swing.border.Border;
 public class TilePanel extends JPanel
 {
-    private ArrayList<BufferedImage> tilesImages;
+	private ArrayList<BufferedImage> tilesImages;
 	private static boolean ImageLoaded = false;
 	private BufferedImage mainAzulBoard, factoryImage, numberOne;
-    public TilePanel()
-    {
-    	try {
+	public TilePanel()
+	{
+		try {
 			if (!ImageLoaded) {
 				System.out.println("loading images");
 
@@ -62,18 +62,18 @@ public class TilePanel extends JPanel
 					tilesImages.add(ImageIO.read(new File("./images/Yellow_Tile.png")));
 				mainAzulBoard = ImageIO.read(new File("./images/Azul Board.jpg"));
 				factoryImage = ImageIO.read(new File("./images/Azul_Factory.png"));
-				numberOne = ImageIO.read(TilePanel.class.getResource("/images/Number_1_Tile.png"));
+				numberOne = ImageIO.read(new File("./images/Number_1_Tile.png"));
 				ImageLoaded = true;
 
 			}
 		}
-    	catch(Exception E)
-    	{
+		catch(Exception E)
+		{
 			E.printStackTrace();
 
-    		return;
-    	}
-    }
+			return;
+		}
+	}
 
 	public void paint (Graphics g)
 	{
